@@ -1,0 +1,199 @@
+#main{
+    position: relative;
+    background: #651e3e ;
+    overflow: hidden;
+}
+header {
+    margin-top: 50px;
+}
+#title {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+}
+#description {
+    color: #ffffff;
+    text-align: left;
+    margin: 0 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    font-style: italic;
+    padding-top: 0px;
+}
+#container {
+    display: block;
+    width: 300px;
+    height: auto;
+    margin: 10px auto 10px auto;
+    background-color: #451e3e;
+    padding: 10px 20px;
+    border-radius: 0.40rem;
+    color: #ffffff
+}
+@media screen and (max-width: 450px) {
+    #container {
+        width: 300px;
+    }
+    .calDiv {
+        display: inline;
+    }
+  table {
+    width: 90%;
+    text-align: left;
+    margin: auto;
+}
+.buttonDiv {
+    display: flex;
+    width: 100%;
+    margin: auto;
+}
+#add {
+    display: none;
+    float: left;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+}
+fieldset {
+    width: 50%;
+    margin: auto;
+}
+  }
+@media screen and (min-width: 451px) and (max-width: 700px) {
+    #container {
+        width: 500px;
+    }
+    .calDiv {
+        display: flex;
+    }
+  table {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+  .buttonDiv {
+    display: flex;
+    width: 70%;
+    margin: 0;
+}
+#add {
+    display: none;
+    float: left;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+}
+fieldset {
+    width: 50%;
+    margin: auto;
+}
+  }
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+    #container {
+        width: 600px;
+    }
+    .calDiv {
+        display: flex;
+    }
+  table {
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+  .buttonDiv {
+    display: flex;
+    width: 50%;
+    margin: 0;
+}
+#add {
+    display: none;
+    float: left;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+}
+fieldset {
+    width: 50%;
+    margin: auto;
+}
+  }
+@media screen and (min-width: 1001px) {
+    #container {
+        width: 850px;
+    }
+    .calDiv {
+        display: flex;
+    }
+  table {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+  .buttonDiv {
+    display: flex;
+    width: 30%;
+    margin: 0;
+}
+#add {
+    display: none;
+    float: left;
+    width: 50%;
+    margin: auto;
+    padding: 10px 80px;
+    align-items: center;
+}
+  }
+label, p{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: inherit;
+    line-height: inherit;
+}
+.control {
+    display: block;
+    position: relative;
+    min-width: 20%;
+    min-height: 30px;
+    border: 2px;
+    border-radius: 0.25rem;
+    padding: 0 10px;
+}
+.leftDiv, .rightDiv {
+    margin: auto;
+}
+.input-radio {
+    min-height: 1.1rem;
+    min-width: 1.1rem;
+}
+.radio-font {
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+}
+p {
+    margin: 10px 20px;
+}
+#submit-button {
+    min-width: auto;
+    min-height: auto;
+    position: relative;
+}
+.submit {
+    border-radius: 10%;
+    background-color: #ffffff;
+    display: block;
+    min-width: 10%;
+    min-height: auto;
+    padding: 5px;
+    margin: auto;
+}
+#errorSpan {
+    color: red;
+    font-size: 18px;
+}
+#countryList li, table {
+    color: #f5deb3;
+    font-family: 'Poppins', sans-serif;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <title>Currency Calculator</title>
+    <link rel="stylesheet" href="currencyCalculator.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<body>
+    <div id="main">
+        <header>
+            <h1 id="title">CURRENCY CONVERTER</h1>
+            <p>
+                <ul id="description">
+                    <li>This is a simple web-based currency converter that converts between currencies of any two of
+                        the countries listed in the table. The converter was first designed for manual computations by
+                        matching properties of an object but was later upgraded to using third-party API which allows
+                        for real-time exchange rates</li>
+                    <li>Users may add new countries, currency and currency notation and these will be updated on the table
+                        and radio buttons appropriately</li>
+                    <li>The converter uses the currency ISO code entered by the user to obtain exchange rates, therefore, 
+                        users should ensure that only correct data is entered in the input fields as they cannot be changed
+                        or deleted after submission; hence, the prompt to enter "Y" or "y" to confirm or "N" or "n" to abort submission</li>
+                </ul>
+            </p>
+            <table id="currencyTable">
+                <tr>
+                  <th>COUNTRY</th>
+                  <th>CURRENCY</th> 
+                  <th>CODE</th>
+                </tr>
+                <tr>
+                  <td>Nigeria</td>
+                  <td>Naira</td>
+                  <td>NGN</td>
+                </tr>
+                <tr>
+                  <td>Zambia</td>
+                  <td>Zambia Kwachan</td>
+                  <td>ZMW</td>
+                </tr>
+                <tr>
+                  <td>Great Britain</td>
+                  <td>Pound Sterling</td>
+                  <td>GBP</td>
+                </tr>
+                <tr>
+                  <td>United States of America</td>
+                   <td>United States Dollars</td>
+                   <td>USD</td>
+                  </tr>
+              </table><br>
+        </header>
+        <div id="container">
+            <form>
+                <div class="calDiv">
+                    <div class="leftDiv">
+                        <div class="group">
+                            <label id="name-label" for="name">Enter Amount:</label><br>
+                            <span id="errorSpan"></span>
+                            <h2 id="inOutput"></h2>
+                            <input type="number" id="input" name="amount" min="1" placeholder="Amount" class="control" required><br>
+                        </div>
+                        <div class="radio-font">
+                            <label for="recommend">Select a currency to convert from:</label><br>
+                            <input class="input-radio" type="radio" value="NGN" name="currencyFrom"><label>NGN</label><br>
+                            <input class="input-radio" type="radio" value="ZMW" name="currencyFrom"><label>ZMW</label><br>
+                            <input class="input-radio" type="radio" value="GBP" name="currencyFrom"><label>GBP</label><br>
+                            <input class="input-radio" type="radio" value="USD" name="currencyFrom"><label>USD</label><br>
+                        </div>
+                    </div>
+                    <div class="rightDiv">
+                        <div class="group">
+                            <h2 id="output">RESULT</h2>
+                        </div>
+                        <div class="radio-font">
+                            <label for="recommend">Select a currency to convert to:</label><br>
+                            <input class="input-radio" type="radio" value="NGN" name="currencyTo"><label>NGN</label><br>
+                            <input class="input-radio" type="radio" value="ZMW" name="currencyTo"><label>ZMW</label><br>
+                            <input class="input-radio" type="radio" value="GBP" name="currencyTo"><label>GBP</label><br>
+                            <input class="input-radio" type="radio" value="USD" name="currencyTo"><label>USD</label><br>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div id="submit-button">
+                    <input type="submit" class="submit" id="calculateBtn" value="CALCULATE">
+                </div><br>
+            </form>
+            <p>Note: This currency converter is scalable. If you wish to add countries and currencies, Please click <button id="showBtn">here</button></p>
+            <div id="add">
+                <div id="addCountry">
+                    <p>See a list of some countries and their currency ISO Code to assist you in filling the below fields</p>
+                    <p>Country: Currency: ISO Code</p>
+                    <ul id="countryList">
+                        <li>Germany: Euro: <strong>EUR</strong></li>
+                        <li>Peru: Peruvian Sol: <strong>PEN</strong></li>
+                        <li>India: Indian Rupee: <strong>INR</strong></li>
+                        <li>Japan: Japanese Yen: <strong>JPY</strong></li>
+                        <li>China: Chinese Yuan: <strong>CNY</strong></li>
+                        <li>Turkey: Turkish Lira: <strong>TRY</strong></li>
+                        <li>Brazil: Brazilian Real: <strong>BRL</strong></li>
+                        <li>Algeria: Algerian Dinar: <strong>DZD</strong></li>
+                        <li>Canada: Canadian Dollars: <strong>CAD</strong></li>
+                        <li>Ukraine: Ukrainian Hryvnia: <strong>UAH</strong></li>
+                        <li>Australia: Australian Dollars: <strong>AUD</strong></li>
+                    </ul>
+                </div>
+                <fieldset>
+                    <label for="full-name">Enter Country:</label><br>
+                    <input type="text" name="country" class="control" id="countryinput" placeholder="country"><br>
+                    <label for="full-name">Enter Currency:</label><br>
+                    <input type="text" name="currency" class="control" id="currencyInput" placeholder="currency"><br>
+                    <label for="full-name">Enter Currency Code:</label><br>
+                    <input type="text" name="currencyAbbrev" class="control" id="currencyAbInput" placeholder="must be 3 block alphabets"><br>
+                    <div class="buttonDiv">
+                        <input type="submit" class="submit" value="SUBMIT" id="addBtn">
+                        <p>or</p>
+                        <input type="submit" class="submit" value="CANCEL" id="cancelBtn">
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <script src="currencyCalculator.js"></script>
+</body>
+</html>
