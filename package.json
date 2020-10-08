@@ -1,0 +1,19 @@
+{
+  "name": "currencyconverter",
+  "version": "1.0.0",
+  "description": "A web-based app that converts between currencies",
+  "main": "currencyCalculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmanuelidiaghe/currencyConverter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmanuelidiaghe/currencyConverter/issues"
+  },
+  "homepage": "https://github.com/emmanuelidiaghe/currencyConverter#readme"
+}
