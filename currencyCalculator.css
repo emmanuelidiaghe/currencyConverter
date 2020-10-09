@@ -33,7 +33,7 @@ header {
     border-radius: 0.40rem;
     color: #ffffff
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 350px) {
     #container {
         width: 300px;
     }
