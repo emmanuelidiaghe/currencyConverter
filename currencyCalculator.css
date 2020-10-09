@@ -38,7 +38,8 @@ header {
         width: 300px;
     }
     .calDiv {
-        display: inline;
+        flex-direction: column;
+        /*display: inline;*/
     }
   table {
     width: 90%;
