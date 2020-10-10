@@ -42,6 +42,11 @@ let checkedBtnFrom  = "",
                        'GBP': {'NGN': 484.95, 'ZMW': 25.44,  'USD': 1.27},
                        'USD': {'NGN': 380.5,  'ZMW': 19.97,  'GBP': 0.78}
 }*/
+var obj;
+        fetch('http://data.fixer.io/api/latest?access_key=d894c55749678f37168a24fdb3388aea')
+        .then(res => res.json())
+        .then(data => obj = data)
+        .then(() => console.log(obj));
 
 function show() { //show fieldset for adding currencies
     showDiv.style.display = "block";
@@ -137,7 +142,14 @@ function convert(event) { //convert between currencies
     else {
         const fromCurrency = checkedBtnFrom;
         const toCurrency = checkedBtnTo;
-        fetch('http://data.fixer.io/api/latest?access_key=d894c55749678f37168a24fdb3388aea').then(res => res.json())
+            const rateTo = obj.rates[toCurrency];
+            const rateFrom = obj.rates[fromCurrency];
+            const rate = (rateTo/rateFrom);
+            const result = (input.value * rate).toFixed(2).toString(); 
+            inOutput.innerHTML = (input.value + " " + fromCurrency);
+            output.innerHTML = (result + " " + toCurrency);
+           
+        /*fetch('http://data.fixer.io/api/latest?access_key=d894c55749678f37168a24fdb3388aea').then(res => res.json())
         .then(res => {
             const rateTo = res.rates[toCurrency];
             const rateFrom = res.rates[fromCurrency];
@@ -145,7 +157,7 @@ function convert(event) { //convert between currencies
             const result = (input.value * rate).toFixed(2).toString(); 
             inOutput.innerHTML = (input.value + " " + fromCurrency);
             output.innerHTML = (result + " " + toCurrency);
-            })
+            })*/
         }
 }
 
