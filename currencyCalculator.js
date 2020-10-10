@@ -34,7 +34,8 @@ let checkedBtnFrom  = "",
     currencyTable   = document.getElementById("currencyTable"),
     currencyInput   = document.getElementById("currencyInput"),
     currencyAbInput = document.getElementById("currencyAbInput"),
-    showBottom      = (document.scrollingElement || document.body);
+    showBottom      = (document.scrollingElement || document.body),
+    currencyObj;
 
 //Object of exchange rates (ineffective for scalability)
 /*var currencyMatch = {'NGN': {'ZMW': 0.052,  'GBP': 0.0021, 'USD': 0.0026},
@@ -42,11 +43,9 @@ let checkedBtnFrom  = "",
                        'GBP': {'NGN': 484.95, 'ZMW': 25.44,  'USD': 1.27},
                        'USD': {'NGN': 380.5,  'ZMW': 19.97,  'GBP': 0.78}
 }*/
-var obj;
-        fetch('https://api.exchangeratesapi.io/latest')
-        .then(res => res.json())
-        .then(data => obj = data)
-        .then(() => console.log(obj));
+fetch('https://openexchangerates.org/api/latest.json?app_id=8d2d8cbeedb24a2e8aab28871e38fb6b') //fetch currency rates
+.then(res => res.json())
+.then(data => currencyObj = data);
 
 function show() { //show fieldset for adding currencies
     showDiv.style.display = "block";
@@ -142,23 +141,13 @@ function convert(event) { //convert between currencies
     else {
         const fromCurrency = checkedBtnFrom;
         const toCurrency = checkedBtnTo;
-            const rateTo = obj.rates[toCurrency];
-            const rateFrom = obj.rates[fromCurrency];
-            const rate = (rateTo/rateFrom);
-            const result = (input.value * rate).toFixed(2).toString(); 
-            inOutput.innerHTML = (input.value + " " + fromCurrency);
-            output.innerHTML = (result + " " + toCurrency);
-           
-        /*fetch('http://data.fixer.io/api/latest?access_key=d894c55749678f37168a24fdb3388aea').then(res => res.json())
-        .then(res => {
-            const rateTo = res.rates[toCurrency];
-            const rateFrom = res.rates[fromCurrency];
-            const rate = (rateTo/rateFrom);
-            const result = (input.value * rate).toFixed(2).toString(); 
-            inOutput.innerHTML = (input.value + " " + fromCurrency);
-            output.innerHTML = (result + " " + toCurrency);
-            })*/
-        }
+        const rateTo = currencyObj.rates[toCurrency];
+        const rateFrom = currencyObj.rates[fromCurrency];
+        const rate = (rateTo/rateFrom);
+        const result = (input.value * rate).toFixed(4).toString(); 
+        inOutput.innerHTML = (input.value + " " + fromCurrency);
+        output.innerHTML = (result + " " + toCurrency);
+    }
 }
 
 //Event Listeners
