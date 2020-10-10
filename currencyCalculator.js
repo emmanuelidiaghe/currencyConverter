@@ -137,7 +137,7 @@ function convert(event) { //convert between currencies
     else {
         const fromCurrency = checkedBtnFrom;
         const toCurrency = checkedBtnTo;
-        fetch('http://data.fixer.io/api/latest?access_key=d894c55749678f37168a24fdb3388aea').then(res => res.json())
+        api.get('http://data.fixer.io/api/latest?access_key=d894c55749678f37168a24fdb3388aea').then(res => res.json())
         .then(res => {
             const rateTo = res.rates[toCurrency];
             const rateFrom = res.rates[fromCurrency];
