@@ -43,7 +43,7 @@ let checkedBtnFrom  = "",
                        'USD': {'NGN': 380.5,  'ZMW': 19.97,  'GBP': 0.78}
 }*/
 var obj;
-        fetch('http://data.fixer.io/api/latest?access_key=d894c55749678f37168a24fdb3388aea')
+        fetch('https://api.exchangeratesapi.io/latest')
         .then(res => res.json())
         .then(data => obj = data)
         .then(() => console.log(obj));
